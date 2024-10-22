@@ -130,37 +130,37 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Add event listeners to increase quantity buttons
-        document.querySelectorAll('.increase').forEach(button => {
-            button.addEventListener('click', () => {
-                const productId = button.closest('.product-qty').dataset.productId;
-                const stock = parseInt(button.closest('.product-qty').dataset.stock);
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const item = cart.find(item => item.id === productId);
+        // document.querySelectorAll('.increase').forEach(button => {
+        //     button.addEventListener('click', () => {
+        //         const productId = button.closest('.product-qty').dataset.productId;
+        //         const stock = parseInt(button.closest('.product-qty').dataset.stock);
+        //         let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        //         const item = cart.find(item => item.id === productId);
 
-                if (item && item.quantity < stock) {
-                    item.quantity++;
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    renderCartItems(); // Re-render cart items after quantity update
-                    updateSelectedSubtotal();
-                }
-            });
-        });
+        //         if (item && item.quantity < stock) {
+        //             item.quantity++;
+        //             localStorage.setItem('cart', JSON.stringify(cart));
+        //             renderCartItems();
+        //             updateSelectedSubtotal();
+        //         }
+        //     });
+        // });
 
         // Add event listeners to decrease quantity buttons
-        document.querySelectorAll('.decrease').forEach(button => {
-            button.addEventListener('click', () => {
-                const productId = button.closest('.product-qty').dataset.productId;
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const item = cart.find(item => item.id === productId);
+        // document.querySelectorAll('.decrease').forEach(button => {
+        //     button.addEventListener('click', () => {
+        //         const productId = button.closest('.product-qty').dataset.productId;
+        //         let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        //         const item = cart.find(item => item.id === productId);
 
-                if (item && item.quantity > 1) {
-                    item.quantity--;
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    renderCartItems(); // Re-render cart items after quantity update
-                    updateSelectedSubtotal();
-                }
-            });
-        });
+        //         if (item && item.quantity > 1) {
+        //             item.quantity--;
+        //             localStorage.setItem('cart', JSON.stringify(cart));
+        //             renderCartItems();
+        //             updateSelectedSubtotal();
+        //         }
+        //     });
+        // });
 
         // Add event listeners to checkboxes to update the subtotal
         document.querySelectorAll('.cart-item-checkbox').forEach(checkbox => {

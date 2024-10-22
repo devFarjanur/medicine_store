@@ -69,7 +69,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{ $customers->links() }}
                         </div>
                     @else
                         <p class="text-center">No orders found for the selected date range.</p>
