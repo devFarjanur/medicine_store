@@ -383,10 +383,10 @@ class AdminController extends Controller
     public function updateStatus(Request $request, Order $order)
     {
         $request->validate([
-            'status' => 'required|string|in:pending,processing,shipped,delivered,cancelled,returned',
+            'status' => 'required|string|in:Pending,Processing,Shipped,Delivered,Cancelled,Returned',
         ]);
 
-        if ($request->status === 'shipped' && $order->status !== 'shipped') {
+        if ($request->status === 'Shipped' && $order->status !== 'Shipped') {
             foreach ($order->items as $item) {
                 $product = $item->product;
                 $product->stock -= $item->quantity;
@@ -394,7 +394,7 @@ class AdminController extends Controller
             }
         }
 
-        if ($request->status === 'returned' && $order->status !== 'returned') {
+        if ($request->status === 'Returned' && $order->status !== 'Returned') {
             foreach ($order->items as $item) {
                 $product = $item->product;
                 $product->stock += $item->quantity;
