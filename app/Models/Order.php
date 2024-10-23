@@ -54,6 +54,12 @@ class Order extends Model
     {
         parent::boot();
 
+        
+        // Generate a unique 5-digit order number before creating a new order
+        static::creating(function ($order) {
+            $order->order_number = str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
+        });
+
         static::deleting(function ($order) {
             // Delete all related order items before deleting the order
             $order->items()->delete();
