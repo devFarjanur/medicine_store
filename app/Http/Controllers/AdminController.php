@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Product;
 use PDF;
+use Illuminate\Support\Facades\DB;
 
 
 class AdminController extends Controller
@@ -235,14 +236,23 @@ class AdminController extends Controller
 
     public function AdminDeleteCategory($id)
     {
-        $category = Category::findOrFail($id);
-        $category->delete();
+        DB::transaction(function () use ($id) {
+            $category = Category::findOrFail($id);
+
+            // Delete all related products and their order items
+            foreach ($category->products as $product) {
+                $product->orderItems()->delete(); // Delete related order items
+                $product->delete(); // Delete the product
+            }
+
+            // Delete the category
+            $category->delete();
+        });
 
         return redirect()->route('admin.categories')->with([
             'message' => 'Product Category deleted successfully.',
-            'alert-type' => 'success'
+            'alert-type' => 'success',
         ]);
-
     }
 
 
@@ -357,20 +367,18 @@ class AdminController extends Controller
     }
 
     // Admin order 
-
     public function AdminOrder()
     {
         $orders = Order::with(['user', 'items.product', 'address'])->get();
         return view('admin.order.admin_order', compact('orders'));
     }
 
-
-    public function AdminOrderView($order)
+    public function AdminOrderView($id)
     {
-        $order = Order::with('user', 'address', 'items.product')->findOrFail($order);
+        // Eager load user, address, items, and products
+        $order = Order::with('user', 'address', 'items.product')->findOrFail($id);
         return view('admin.order.admin_order_view', compact('order'));
     }
-
 
     public function updateStatus(Request $request, Order $order)
     {
@@ -378,34 +386,28 @@ class AdminController extends Controller
             'status' => 'required|string|in:pending,processing,shipped,delivered,cancelled,returned',
         ]);
 
-        // If status is changing to 'shipped', decrease the product stock .......
         if ($request->status === 'shipped' && $order->status !== 'shipped') {
             foreach ($order->items as $item) {
                 $product = $item->product;
-                $product->stock -= $item->quantity; // Decrease stock by ordered quantity
+                $product->stock -= $item->quantity;
                 $product->save();
             }
         }
 
-        // If status is changing to 'returned', increase the product stock .....
         if ($request->status === 'returned' && $order->status !== 'returned') {
             foreach ($order->items as $item) {
                 $product = $item->product;
-                $product->stock += $item->quantity; // Increase stock by returned quantity
+                $product->stock += $item->quantity;
                 $product->save();
             }
         }
 
-        // Update the order status
         $order->status = $request->status;
         $order->save();
-        return redirect()->route('admin.order.view', $order->id)->with([
-            'message' => 'Order status updated successfully',
-            'alert-type' => 'success'
-        ]);
+
+        return redirect()->route('admin.order.view', $order->id)->with('message', 'Order status updated successfully.');
     }
 
-    //payment status
     public function updatePaymentStatus(Request $request, Order $order)
     {
         $request->validate([
@@ -415,7 +417,7 @@ class AdminController extends Controller
         $order->payment_status = $request->payment_status;
         $order->save();
 
-        return redirect()->route('admin.order.view', $order->id)->with('success', 'Payment status updated successfully.');
+        return redirect()->route('admin.order.view', $order->id)->with('message', 'Payment status updated successfully.');
     }
 
     // Admin report

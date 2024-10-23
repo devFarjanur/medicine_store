@@ -21,12 +21,12 @@ class Order extends Model
         'currency',
     ];
 
-    const STATUS_PENDING = 'pending';
-    const STATUS_PROCESSING = 'processing';
-    const STATUS_SHIPPED = 'shipped';
-    const STATUS_DELIVERED = 'delivered';
-    const STATUS_CANCELLED = 'cancelled';
-    const STATUS_RETURNED = 'returned';
+    const STATUS_PENDING = 'Pending';
+    const STATUS_PROCESSING = 'Processing';
+    const STATUS_SHIPPED = 'Shipped';
+    const STATUS_DELIVERED = 'Delivered';
+    const STATUS_CANCELLED = 'Cancelled';
+    const STATUS_RETURNED = 'Returned';
 
     const PAYMENT_PENDING = 'pending_payment';
     const PAYMENT_DUE = 'payment_due';
@@ -49,19 +49,15 @@ class Order extends Model
         return $this->belongsTo(Address::class);
     }
 
+    // Use model events to delete related order items
     protected static function boot()
     {
         parent::boot();
 
-        // Generate a unique 5-digit order number before creating a new order
-        static::creating(function ($order) {
-            $order->order_number = str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
+        static::deleting(function ($order) {
+            // Delete all related order items before deleting the order
+            $order->items()->delete();
         });
     }
-
-
-
-
-
 
 }
