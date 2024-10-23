@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="rl-products-slider swiper mt-8">
-                    <div class="">
+                    <div class="swiper-wrapper">
                         @foreach ($category->products as $product)
 
                             <a href="{{ route('customer.product.details', $product->id) }}">
