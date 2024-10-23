@@ -78,7 +78,10 @@
                             </tbody>
                         </table>
                     </div>
-                    <a href="{{ route('customer.report') }}" class="btn btn-secondary mt-3">Back to Report</a>
+                    <button onclick="window.print()" class="btn btn-success btn-lg px-3 text-white mt-4">Print</button>
+                    <div class= "d-flex justify-content-end mt-0">
+                        <a href="{{ route('customer.report') }}" class="btn btn-secondary">Back to Report</a>
+                    </div>  
                 </div>
             </div>
         </div>

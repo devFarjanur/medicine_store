@@ -36,7 +36,7 @@
                                         <td>{{ $customer->phone }}</td>
                                         <td>
                                             <span
-                                                class="{{ $customer->status == 'active' ? 'bg-success' : 'bg-danger' }}">
+                                                class="{{ $customer->status == 'active' ? 'bg-white' : 'bg-danger' }}">
                                                 {{ ucfirst($customer->status) }}
                                             </span>
                                         </td>

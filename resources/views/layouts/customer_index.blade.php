@@ -28,7 +28,7 @@
 
 
     <!-- Title -->
-    <title>Medicine Store</title>
+    <title>Forever Cure Pharma</title>
 
     <!-- Build:css -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/demo1/main.css') }}">

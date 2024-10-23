@@ -36,6 +36,7 @@
                         <p class="mb-4">You will receive a confirmation email shortly with the details of your order.
                         </p>
                         <a href="{{ route('customer.index') }}" class="btn btn-success btn-lg px-4 text-white">Return to Home</a>
+                        <button onclick="window.print()" class="btn btn-secondary btn-lg px-4 text-white mt-0">Print</button>
                     </div>
                 </div>
 
