@@ -141,7 +141,7 @@
                         </span>
                         <div>
                             <h4 class="mb-1">
-                                {{ $ordersPending->count() + $ordersProcessing->count() + $ordersShipped->count() + $ordersDelivered->count() + $ordersCancelled->count() + $ordersReturned->count() }}
+                                {{ $totalOrders }}
                             </h4>
                             <span>Total Orders</span>
                         </div>
@@ -169,7 +169,7 @@
                             </svg>
                         </span>
                         <div>
-                            <h4 class="mb-1">{{ $ordersPending->count() }}</h4>
+                            <h4 class="mb-1">{{ $ordersPending }}</h4>
                             <span>Pending Orders</span>
                         </div>
                     </div>
@@ -195,7 +195,7 @@
                             </svg>
                         </span>
                         <div>
-                            <h4 class="mb-1">{{ $ordersProcessing->count() }}</h4>
+                            <h4 class="mb-1">{{ $ordersProcessing }}</h4>
                             <span>Order Processing</span>
                         </div>
                     </div>
@@ -218,7 +218,7 @@
                             </svg>
                         </span>
                         <div>
-                            <h4 class="mb-1">{{ $ordersShipped->count() }}</h4>
+                            <h4 class="mb-1">{{ $ordersShipped }}</h4>
                             <span>Total Shipped</span>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
                             </svg>
                         </span>
                         <div>
-                            <h4 class="mb-1">{{ $ordersDelivered->count() }}</h4>
+                            <h4 class="mb-1">{{ $ordersDelivered }}</h4>
                             <span>Total Delivered</span>
                         </div>
                     </div>
@@ -282,7 +282,7 @@
                             </svg>
                         </span>
                         <div>
-                            <h4 class="mb-1">{{ $ordersCancelled->count() }}</h4>
+                            <h4 class="mb-1">{{ $ordersCancelled }}</h4>
                             <span>Cancelled Orders</span>
                         </div>
                     </div>
@@ -308,7 +308,7 @@
                             </svg>
                         </span>
                         <div>
-                            <h4 class="mb-1">{{ $ordersReturned->count() }}</h4>
+                            <h4 class="mb-1">{{ $ordersReturned }}</h4>
                             <span>Returned Orders</span>
                         </div>
                     </div>

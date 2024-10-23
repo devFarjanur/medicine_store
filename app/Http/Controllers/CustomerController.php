@@ -247,16 +247,16 @@ class CustomerController extends Controller
         // Fetch the user's orders with associated products
         $orders = Order::where('user_id', $id)->with('items.product')->get();
 
-        // Group orders by status
-        $ordersPending = $orders->where('status', 'Pending');
-        $ordersProcessing = $orders->where('status', 'Processing');
-        $ordersShipped = $orders->where('status', 'Shipped');
-        $ordersDelivered = $orders->where('status', 'Delivered');
-        $ordersCancelled = $orders->where('status', 'Cancelled');
-        $ordersReturned = $orders->where('status', 'Returned');
+        // Total number of orders
+        $totalOrders = Order::count();
 
-        // Calculate the total number of orders
-        $totalOrders = $orders->count();
+        // Count orders by status
+        $ordersPending = Order::where('status', Order::STATUS_PENDING)->count();
+        $ordersDelivered = Order::where('status', Order::STATUS_DELIVERED)->count();
+        $ordersReturned = Order::where('status', Order::STATUS_RETURNED)->count();
+        $ordersProcessing = Order::where('status', Order::STATUS_PROCESSING)->count();
+        $ordersShipped = Order::where('status', Order::STATUS_SHIPPED)->count();
+        $ordersCancelled = Order::where('status', Order::STATUS_CANCELLED)->count();
 
         return view(
             'layouts.pages.myaccount',
