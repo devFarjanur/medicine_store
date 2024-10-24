@@ -35,18 +35,7 @@
                                 <input class="form-control" type="date" name="end_date"
                                     value="{{ old('end_date', $endDate) }}">
                             </div>
-
-                       <!-- <div class="col-md-2">
-                                <label for="select_month" class="form-label">Select Month</label>
-                                <select name="month" class="form-control">
-                                    <option value="">Select Month</option>
-                                    @foreach(range(1, 12) as $month)
-                                        <option value="{{ $month }}" {{ request('month') == $month ? 'selected' : '' }}>
-                                            {{ date('F', mktime(0, 0, 0, $month, 1)) }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div> -->
+                            
                             <div class="col-md-4 pt-4 mt-2 mt-md-0">
                                 <button type="submit" class="btn btn-primary">Search</button>
                                 <a href="{{ route('customer.report.all.orders', $customer->id) }}"

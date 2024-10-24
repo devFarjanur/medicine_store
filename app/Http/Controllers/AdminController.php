@@ -375,7 +375,7 @@ class AdminController extends Controller
 
     public function AdminOrderView($id)
     {
-        // Eager load user, address, items, and products
+        // Eager load user, address, items, and products...
         $order = Order::with('user', 'address', 'items.product')->findOrFail($id);
         return view('admin.order.admin_order_view', compact('order'));
     }

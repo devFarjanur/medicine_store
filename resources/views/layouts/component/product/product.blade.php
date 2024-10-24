@@ -27,7 +27,7 @@
                 <div class="shop-grid">
                     <div
                         class="listing-top d-flex align-items-center justify-content-between flex-wrap gap-3 bg-white rounded-2 px-4 py-5 mb-6">
-                        <p class="mb-0 fw-bold">Showing 1-12 of 45 results</p>
+                        <p class="mb-0 fw-bold">Showing all the product here</p>
                     </div>
                     <div class="row g-4 justify-content-center">
                         @foreach ($products as $product)
