@@ -222,16 +222,6 @@ class CustomerController extends Controller
 
 
 
-    // ------------------------- invoice page
-
-    public function CustomerInvoice()
-    {
-
-        $categories = Category::with('products')->get();
-        return view('layouts.pages.invoice', compact('categories'));
-    }
-
-
     // ----------------------- customer account page  
 
 

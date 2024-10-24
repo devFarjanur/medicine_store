@@ -209,7 +209,7 @@
 
                         </div>
                         <div class="gshop-header-contact ms-7 position-relative d-none d-lg-flex d-xl-none d-xxl-flex">
-                            <a href="tel:+801570584567" class="d-flex align-items-center">
+                            <a href="" class="d-flex align-items-center">
                                 <span
                                     class="icon d-inline-flex rounded-circle justify-content-center align-items-center bg-secondary-light">
                                     <svg width="20" height="24" viewBox="0 0 23 24" fill="none"
@@ -220,10 +220,7 @@
                                             stroke-linejoin="round" />
                                     </svg>
                                 </span>
-                              <!--  <div class="ms-3">
-                                    <span class="text-muted fs-xs">Phone</span>
-                                    <h6 class="mb-0 mt-1 fs-sm">+80 157 058 4567</h6>
-                                </div> -->
+                            
                             </a>
                         </div>
                         <button class="gshop-offcanvas-btn offcanvas-toggle ms-3">
@@ -264,83 +261,6 @@
         </div>
     </div>
 </header> <!--header section end-->
-
-<!--offcanvas menu start-->
-<!--<div class="offcanvas_menu position-fixed">
-    <div class="tt-short-info d-none d-md-none d-lg-none d-xl-block">
-        <button class="offcanvas-close"><i class="fa-solid fa-xmark"></i></button>
-        <a href="#" class="logo-wrapper d-inline-block mb-5"><img src="backend/assets/images/iconlogo.png" alt="logo" /></a>
-        <div class="offcanvas-content">
-            <h4 class="mb-4">About Us</h4>
-            <p>
-                Explain to you how all this mistaken denouncing pleasure and praising pain was born and we will give you
-                a complete account of the system, and expound the actual teachings.
-            </p>
-            <p>
-                Mistaken denouncing pleasure and praising pain was born and we will give you complete account of the
-                system expound.
-            </p>
-            <a href="#" class="btn btn-primary mt-4">About Us</a>
-        </div>
-        <div class="offcanvas-contact mt-5">
-            <h5 class="mb-20">Contact Info</h5>
-            <address>
-                Sector-10, Road-12B, Bangladesh<br />
-                <a href="#">+8801310900097</a> <br />
-                <a href="#">cure.forever@gmail.com</a>
-            </address>
-        </div>
-        <div class="social-contact offcanvas_social mt-4">
-            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-    <div class="mobile-menu d-md-block d-lg-block d-xl-none">
-        <button class="offcanvas-close"><i class="fa-solid fa-xmark"></i></button>
-        <a href="#" class="d-inline-block mb-5"><img src=" {{ asset('backend/assets/images/logo.png') }}"
-                alt="logo" /></a>
-        <nav class="mobile-menu-wrapper mt-4">
-            <ul>
-                <li class="has-submenu">
-                    <a href="{{ route('customer.index') }}">Home<span class="ms-1 fs-xs float-end"></span></a>
-
-                </li>
-                <li class="has-submenu">
-                    <a href="{{ route('customer.product') }}">Products<span class="ms-1 fs-xs float-end"></span></a>
-
-                </li>
-                <li class="has-submenu">
-                    <a href="{{ route('customer.about') }}">About Us<span class="ms-1 fs-xs float-end"></span></a>
-
-                </li>
-                <li class="has-submenu">
-                    <a href="{{ route('customer.contact') }}">Contact<span class="ms-1 fs-xs float-end"></span></a>
-                </li>
-
-            </ul>
-        </nav>
-        <div class="contact-info mt-8">
-            <h5 class="mb-20">Contact Info</h5>
-            <address>
-                Sector-10, Road-12B, Bangladesh <br />
-                <a href="tel:+8801310900097">+8801310900097</a> <br />
-                <a href="mailto:cure.forever@gmail.com">cure.forever@gmail.com</a>
-            </address>
-            <div class="social-contact">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </div>
-
-</div> -->
-<!--offcanvas menu end--> 
-
 
 
 <script>
