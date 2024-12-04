@@ -3,14 +3,14 @@
 ## Online Pharmacy Store Features
 
 **Live site**: [Link to live website]  
-**Code**: [Link to GitHub repository]
+**Code**: https://github.com/devFarjanur/medicine_store
 
 Developed and maintained an online pharmacy platform featuring a variety of medicines and healthcare products. The platform is designed for easy product management, customer convenience, and secure payment integration.
 
 ### Admin Dashboard Features:
 - **Admin Authentication & Profile Management**: Secure admin login with profile management and password update functionality.
 - **Product Management**: Admins can add, edit, or delete products and manage categories efficiently.
-- **Inventory Management**: Track product quantities, including returns and low stock alerts.
+- **Inventory Management**: Track product quantities, including returns.
 - **Order Management**: Manage customer orders with options for **Cash on Delivery** and **SSL Payment**.
 - **Order Status Updates**: Admins can update order statuses (Pending, Processing, Shipped, Delivered, Returned).
 - **Download Reports**: Download customer order reports with date filters for easy tracking.
