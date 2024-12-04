@@ -29,6 +29,32 @@ You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
+## Online Pharmacy Store Features
+
+**Live site**: [Link to live website]  
+**Code**: [Link to GitHub repository]
+
+Developed and maintained an online pharmacy platform featuring a variety of medicines and healthcare products. The platform is designed for easy product management, customer convenience, and secure payment integration.
+
+### Admin Dashboard Features:
+- **Admin Authentication & Profile Management**: Secure admin login with profile management and password update functionality.
+- **Product Management**: Admins can add, edit, or delete products and manage categories efficiently.
+- **Inventory Management**: Track product quantities, including returns and low stock alerts.
+- **Order Management**: Manage customer orders with options for **Cash on Delivery** and **SSL Payment**.
+- **Order Status Updates**: Admins can update order statuses (Pending, Processing, Shipped, Delivered, Returned).
+- **Download Reports**: Download customer order reports with date filters for easy tracking.
+
+### Customer Functionality:
+- **Account Management**: Users can register, log in, view and update profiles, and manage their addresses.
+- **Product Browsing**: Customers can browse products by category, view product details, and add products to wishlist/cart.
+- **Secure Checkout**: Customers can check out using either **Cash on Delivery** or **SSL Payment** options.
+- **Order History**: Customers can view past orders, track their order status, and manage addresses for future purchases.
+
+### Technologies Used:
+- **Frontend**: HTML, CSS, Bootstrap, JavaScript, jQuery, AJAX
+- **Backend**: PHP, Laravel
+- **Database**: MySQL
+
 ## Laravel Sponsors
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
