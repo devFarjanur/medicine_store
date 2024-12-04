@@ -1,7 +1,7 @@
 ## Online Pharmacy Store Features
 
-**Live site**: [Live Site](http://promiseeshop.com/smartquestionbank)  
-**Code**: [GitHub Repository](https://github.com/devFarjanur/question_bank_1.1)
+**Live site**: [Live Site](http://promiseeshop.com/medicstore)  
+**Code**: [GitHub Repository](https://github.com/devFarjanur/medicine_store)
 
 Developed and maintained an online pharmacy platform featuring a variety of medicines and healthcare products. The platform is designed for easy product management, customer convenience, and secure payment integration.
 
