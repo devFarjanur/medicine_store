@@ -2,7 +2,7 @@
 
 ## Online Pharmacy Store Features
 
-**Live site**: [Link to live website]  
+**Live site**: https://promiseeshop.com/medicstore 
 **Code**: https://github.com/devFarjanur/medicine_store
 
 Developed and maintained an online pharmacy platform featuring a variety of medicines and healthcare products. The platform is designed for easy product management, customer convenience, and secure payment integration.
